@@ -4,7 +4,6 @@ import { Avatar } from "@mui/material";
 import bgSidebar from "../../assets/bg-sidebar.avif";
 import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
 import Diversity2OutlinedIcon from '@mui/icons-material/Diversity2Outlined';
-import Diversity3OutlinedIcon from '@mui/icons-material/Diversity3Outlined';
 import InterpreterModeOutlinedIcon from '@mui/icons-material/InterpreterModeOutlined';
 import SchemaOutlinedIcon from '@mui/icons-material/SchemaOutlined';
 import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';

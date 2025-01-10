@@ -1,10 +1,10 @@
 .inputOption {
     display: flex;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 8px;
     cursor: pointer;
     color: rgb(190, 190, 190);
-    padding: 10px;
+    padding: 6px;
 }
 
 .inputOption:hover {

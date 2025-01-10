@@ -21,6 +21,8 @@
 
 .post__body {
     overflow-wrap: anywhere;
+    border-bottom: 0.2px solid rgb(49, 49, 49);
+    padding-bottom: 15px;
 }
 
 .post__info > h2 {
