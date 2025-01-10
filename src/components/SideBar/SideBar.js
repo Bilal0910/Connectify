@@ -2,12 +2,27 @@ import React from "react";
 import "./SideBar.css";
 import { Avatar } from "@mui/material";
 import bgSidebar from "../../assets/bg-sidebar.avif";
+import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
+import Diversity2OutlinedIcon from '@mui/icons-material/Diversity2Outlined';
+import Diversity3OutlinedIcon from '@mui/icons-material/Diversity3Outlined';
+import InterpreterModeOutlinedIcon from '@mui/icons-material/InterpreterModeOutlined';
+import SchemaOutlinedIcon from '@mui/icons-material/SchemaOutlined';
+import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
+import DeveloperModeOutlinedIcon from '@mui/icons-material/DeveloperModeOutlined';
 
 const SideBar = () => {
   const recentItem = (topic) => {
     return (
       <div className="sidebar__recentItem">
         <span className="sidebar__hash">#</span>
+        <p>{topic}</p>
+      </div>
+    );
+  };
+  const groups = (topic, icon) => {
+    return (
+      <div className="sidebar__recentItem">
+        <span className="sidebar__hash">{icon}</span>
         <p>{topic}</p>
       </div>
     );
@@ -25,7 +40,7 @@ const SideBar = () => {
       <div className="sidebar__stats">
         <div className="sidebar__stat">
           <p>Who viewed you</p>
-          <p className="sidebar__statNumber">734</p>
+          <p className="sidebar__statNumber">1,034</p>
         </div>
         <div className="sidebar__stat">
           <p>Views on post</p>
@@ -41,6 +56,16 @@ const SideBar = () => {
         {recentItem("AWS-SAA")}
         {recentItem("Databases")}
         {recentItem("Microsoft Azure")}
+      </div>
+
+      <div className="sidebar__bottom">
+        <p>Groups</p>
+        {groups("Amazon Web Services", <InterpreterModeOutlinedIcon/> )}
+        {groups("Python Fundamentals", <Diversity2OutlinedIcon />)}
+        {groups("Data Science", <SchemaOutlinedIcon />)}
+        {groups("React-Native x Flutter", <DeveloperModeOutlinedIcon />)}
+        {groups("NodeJS Community", <GroupsOutlinedIcon />)}
+        {groups("GraphQl Hub", <AccountTreeOutlinedIcon />)}
       </div>
     </div>
   );
