@@ -10,11 +10,11 @@
 .headerOption:hover {
     color: white;
     transition: all 0.4s ease;
-    transform: scale(1.05);
 }
 .headerOption__title {
     font-size: 12px;
     font-weight: 500;
+    color: rgb(196, 195, 195);
 }
 
 .headerOption__icon {
