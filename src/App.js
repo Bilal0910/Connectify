@@ -1,25 +1,41 @@
-import React from "react";
-import "./App.css";
+import React, { useEffect } from "react";
 import Header from "./components/Header/Header";
 import SideBar from "./components/SideBar/SideBar";
 import FeedSection from "./components/Feed/FeedSection";
-import { useSelector } from "react-redux";
-import { selectUser } from "./redux/slices/User/UserSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  loginUser,
+  logoutUser,
+  selectUser,
+} from "./redux/slices/User/UserSlice";
 import Login from "./components/Login/Login";
+import { auth } from "./firebase/firebase";
+import "./App.css";
 
 function App() {
-  // const [theme, setTheme] = useState('light');
-
-  // const toggleTheme = () => {
-  //   const newTheme = theme === 'light' ? 'dark' : 'light';
-  //   setTheme(newTheme);
-  //   document.documentElement.setAttribute('data-theme', newTheme);
-  // }
-
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((userAuth) => {
+      if (userAuth) {
+        dispatch(
+          loginUser({
+            email: userAuth.email,
+            uid: userAuth.uid,
+            displayName: userAuth.displayName,
+            photoURL: userAuth.photoURL,
+          })
+        );
+      } else {
+        dispatch(logoutUser());
+      }
+    });
+  }, []);
+
   return (
     <div className="app">
-      {user ? (
+      {!user ? (
         <Login />
       ) : (
         <>
