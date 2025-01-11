@@ -2,14 +2,18 @@ import React from "react";
 import "./SideBar.css";
 import { Avatar } from "@mui/material";
 import bgSidebar from "../../assets/bg-sidebar.avif";
-import GroupsOutlinedIcon from '@mui/icons-material/GroupsOutlined';
-import Diversity2OutlinedIcon from '@mui/icons-material/Diversity2Outlined';
-import InterpreterModeOutlinedIcon from '@mui/icons-material/InterpreterModeOutlined';
-import SchemaOutlinedIcon from '@mui/icons-material/SchemaOutlined';
-import AccountTreeOutlinedIcon from '@mui/icons-material/AccountTreeOutlined';
-import DeveloperModeOutlinedIcon from '@mui/icons-material/DeveloperModeOutlined';
+import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+import Diversity2OutlinedIcon from "@mui/icons-material/Diversity2Outlined";
+import InterpreterModeOutlinedIcon from "@mui/icons-material/InterpreterModeOutlined";
+import SchemaOutlinedIcon from "@mui/icons-material/SchemaOutlined";
+import AccountTreeOutlinedIcon from "@mui/icons-material/AccountTreeOutlined";
+import DeveloperModeOutlinedIcon from "@mui/icons-material/DeveloperModeOutlined";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/slices/User/UserSlice";
+import { toTitleCase } from "../../utils/stringUtils";
 
 const SideBar = () => {
+  const user = useSelector(selectUser);
   const recentItem = (topic) => {
     return (
       <div className="sidebar__recentItem">
@@ -31,9 +35,11 @@ const SideBar = () => {
     <div className="sidebar">
       <div className="sidebar__top">
         <img src={bgSidebar} alt="" />
-        <Avatar className="sidebar__avatar" />
-        <h2>M. Bilal Nadeem</h2>
-        <h4>bilalnadeem4u@gmail.com</h4>
+        <Avatar src={user.photoUrl} className="sidebar__avatar">
+          {user.email[0].toUpperCase()}
+        </Avatar>
+        <h2>{toTitleCase(user?.displayName || "")}</h2>
+        <h4>{user.email}</h4>
       </div>
 
       <div className="sidebar__stats">
@@ -59,7 +65,7 @@ const SideBar = () => {
 
       <div className="sidebar__bottom">
         <p>Groups</p>
-        {groups("Amazon Web Services", <InterpreterModeOutlinedIcon/> )}
+        {groups("Amazon Web Services", <InterpreterModeOutlinedIcon />)}
         {groups("Python Fundamentals", <Diversity2OutlinedIcon />)}
         {groups("Data Science", <SchemaOutlinedIcon />)}
         {groups("React-Native x Flutter", <DeveloperModeOutlinedIcon />)}

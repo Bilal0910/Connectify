@@ -1,47 +1,47 @@
 .feedsection {
-    flex: 0.6;
-    margin: 0 20px;
+  flex: 0.6;
+  margin: 0 20px;
 }
 
 .feed__inputContainer {
-    background-color: rgb(10, 10, 10);
-    padding: 10px;
-    padding-bottom: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+  background-color: rgb(10, 10, 10);
+  padding: 10px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .feed__input {
-    border: 1px solid gray;
-    border-radius: 30px;
-    display: flex;
-    padding: 10px;
-    color: var(--heading-color);
-    padding-left: 10px;
+  border: 1px solid gray;
+  border-radius: 30px;
+  display: flex;
+  padding: 10px;
+  color: var(--heading-color);
+  padding-left: 10px;
 }
 
-.feed__input > form  {
-    display: flex;
-    width: 100%;
+.feed__input > form {
+  display: flex;
+  width: 100%;
 }
 
 .feed__input > form > input {
-    border: none;
-    flex: 1;
-    margin-left: 10px;
-    outline-width: 0;
-    font-weight: 600;
-    background-color: #2c2c2c3f;
-    border-radius: 30px;
-    color: rgb(190, 190, 190);
-    padding: 8px;
+  border: none;
+  flex: 1;
+  margin-left: 10px;
+  outline-width: 0;
+  font-weight: 600;
+  background-color: #2c2c2c3f;
+  border-radius: 30px;
+  color: rgb(190, 190, 190);
+  padding: 8px;
 }
 
 .feed__input > form > button {
-    display: none;
+  display: none;
 }
 
 .feed__inputOptions {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }

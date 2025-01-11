@@ -1,69 +1,69 @@
 .login {
-    display: grid;
-    place-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 100px;
-    padding-bottom: 100px;
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .login__logo {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .login__logo > img {
-    object-fit: contain;
-    height: 60px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  object-fit: contain;
+  height: 60px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .login > form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .login > form > input {
-    width: 350px;
-    height: 50px;
-    font-size: 20px;
-    padding-left: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+  width: 350px;
+  height: 50px;
+  font-size: 20px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .login > form > button {
-    width: 365px;
-    height: 50px;
-    font-size: large;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: var(--heading-color);
-    border-radius: 5px;
-    cursor: pointer;
-    border:  1px solid var(--heading-color);
+  width: 365px;
+  height: 50px;
+  font-size: large;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: var(--heading-color);
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid var(--heading-color);
 }
 
 .login > form > button:hover {
-    background-color: rgb(12, 12, 12);
-    transition: all 0.2s ease-in;
-    border: 1px solid white
+  background-color: rgb(12, 12, 12);
+  transition: all 0.2s ease-in;
+  border: 1px solid white;
 }
 
 .login__register {
-    color: var(--heading-color);
-    cursor: pointer;
+  color: var(--heading-color);
+  cursor: pointer;
 }
 
 .login__register:hover {
-    color: rgb(86, 155, 235);
-    transition: all 0.2s ease-in;
+  color: rgb(86, 155, 235);
+  transition: all 0.2s ease-in;
 }
 
 .login > p {
-    margin-top: 20px;
+  margin-top: 20px;
 }

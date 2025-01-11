@@ -15,21 +15,27 @@
 }
 
 .post__info > p {
-    font-size: 13px;
-    color: var(--heading-color);
+  font-size: 13px;
+  color: var(--heading-color);
 }
 
 .post__body {
-    overflow-wrap: anywhere;
-    border-bottom: 0.2px solid rgb(49, 49, 49);
-    padding-bottom: 15px;
+  overflow-wrap: anywhere;
+  border-bottom: 0.2px solid rgb(49, 49, 49);
+  padding-bottom: 15px;
 }
 
 .post__info > h2 {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .post__buttons {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.post__avatar {
+  margin-bottom: 10px;
+  background-color: rgb(56, 56, 56) !important;
+  border: 2px solid var(--heading-color);
 }

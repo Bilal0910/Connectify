@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css";
 import logo1 from "../../assets/image.png";
-import { auth } from "../../firebase/firebase";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../redux/slices/User/UserSlice";
 import {
@@ -10,6 +8,7 @@ import {
   updateProfile,
   getAuth,
 } from "firebase/auth";
+import "./Login.css";
 
 const Login = () => {
   const [name, setName] = useState("");

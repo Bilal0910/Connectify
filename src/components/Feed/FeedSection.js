@@ -16,10 +16,15 @@ import {
   serverTimestamp,
   orderBy,
 } from "firebase/firestore";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../redux/slices/User/UserSlice";
+import { toTitleCase } from "../../utils/stringUtils";
+import FlipMove from "react-flip-move";
 
 const FeedSection = () => {
   const [input, setInput] = useState("");
   const [posts, setPosts] = useState([]);
+  const user = useSelector(selectUser);
 
   useEffect(() => {
     // Create a query for the "posts" collection
@@ -46,10 +51,10 @@ const FeedSection = () => {
     try {
       // Add a new post to the "posts" collection
       await addDoc(collection(db, "posts"), {
-        name: "Bilal Nadeem",
-        description: "This is a test post.",
+        name: toTitleCase(user?.displayName || ""),
+        description: user.email,
         message: input,
-        photoUrl: "",
+        photoUrl: user.photoUrl || "",
         timestamp: serverTimestamp(),
       });
       setInput(""); // Clear input field after posting
@@ -103,18 +108,23 @@ const FeedSection = () => {
       </div>
 
       {/* Posts */}
-      {posts.map(
-        ({ id, data: { name, description, message, photoUrl, timestamp } }) => (
-          <Post
-            key={id}
-            name={name}
-            description={description}
-            message={message}
-            photoUrl={photoUrl}
-            timestamp={timestamp}
-          />
-        )
-      )}
+      <FlipMove>
+        {posts.map(
+          ({
+            id,
+            data: { name, description, message, photoUrl, timestamp },
+          }) => (
+            <Post
+              key={id}
+              name={name}
+              description={description}
+              message={message}
+              photoUrl={photoUrl}
+              timestamp={timestamp}
+            />
+          )
+        )}
+      </FlipMove>
     </div>
   );
 };

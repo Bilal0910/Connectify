@@ -6,11 +6,15 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import CommentIcon from "@mui/icons-material/Comment";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import SendIcon from "@mui/icons-material/Send";
-const Post = ({ name, description, message, photoUrl, timestamp }) => {
+import { forwardRef } from "react";
+
+const Post = forwardRef(({ name, description, message, photoUrl, timestamp }, ref) => {
   return (
-    <div className="post">
+    <div ref={ref} className="post">
       <div className="post__header">
-        <Avatar />
+        <Avatar className="post__avatar" src={photoUrl}>
+          {name[0]}
+        </Avatar>
         <div className="post__info">
           <h2>{name}</h2>
           <p>{description}</p>
@@ -38,6 +42,6 @@ const Post = ({ name, description, message, photoUrl, timestamp }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Post;
